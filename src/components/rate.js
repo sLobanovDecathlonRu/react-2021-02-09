@@ -11,7 +11,7 @@ export default function Rate(props) {
         return (props.rate / 5 * 100) + '%'
     };
     return (
-        showRate ? <div className={style.rate}>
+        showRate() ? <div className={style.rate}>
             <div className={style.rate_stars}>
                 <div className={style.rate_stars_top} style={{'width': width()}}/>
             </div>
