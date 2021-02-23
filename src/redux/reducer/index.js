@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import order from './order';
-import restaurants from './restaurants';
+import orderReducer from './order';
+import restaurantsReducer from './restaurants';
 
 export default combineReducers({
-  order,
-  restaurants,
+  order: orderReducer,
+  restaurants: restaurantsReducer,
 });

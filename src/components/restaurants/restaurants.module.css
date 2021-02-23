@@ -1,0 +1,11 @@
+
+.restaurants {
+    display: flex;
+}
+
+.restarauntBlock {
+    width: 70%;
+}
+.basketBlock {
+    width: 30%;
+}

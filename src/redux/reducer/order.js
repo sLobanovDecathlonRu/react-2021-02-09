@@ -1,15 +1,17 @@
-import { DECREMENT, INCREMENT, REMOVE } from '../constants';
+import {DECREMENT, INCREMENT, DELETE} from '../constants';
 
 // { [productId]: amount }
 export default (state = {}, action) => {
-  const { type, id } = action;
+  const {type, id} = action;
   switch (type) {
     case INCREMENT:
-      return { ...state, [id]: (state[id] || 0) + 1 };
+      return {...state, [id]: (state[id] || 0) + 1};
     case DECREMENT:
-      return { ...state, [id]: state[id] < 1 ? 0 : (state[id] || 0) - 1 };
-    case REMOVE:
-      return { ...state, [id]: 0 };
+      return {...state, [id]: (state[id] || 0) - 1};
+    case DELETE:
+      const newState = {...state};
+      delete newState[id];
+      return newState;
     default:
       return state;
   }

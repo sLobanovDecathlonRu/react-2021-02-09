@@ -1,10 +1,11 @@
-import { restaurants as defaultRestaurants } from '../../fixtures';
+import {RESTAURANTS} from '../constants';
 
-export default (restaurants = defaultRestaurants, action) => {
-  const { type } = action;
-
+export default (state = [], action) => {
+  const {type, restaurants} = action;
   switch (type) {
-    default:
+    case RESTAURANTS:
       return restaurants;
+    default:
+      return state;
   }
 };
